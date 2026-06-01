@@ -1,0 +1,25 @@
+student=
+{
+    "name":"yogita",
+    "Rollno":1,
+    "mark":98,
+    "subject":"java"
+},
+{
+    "name":"Shital",
+    "Rollno":2,
+    "mark":89,
+    "subject":"python"
+},
+{
+    "name":"Sanika",
+    "Rollno":3,
+    "mark":98,
+    "subject":"c++"
+},
+{
+    "name":"Laxmi",
+    "Rollno":4,
+    "mark":95,
+    "subject":"javascript"
+}
