@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Recommendation</title>
+
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+        background:linear-gradient(135deg,#56ab2f,#a8e063);
+        min-height:100vh;
+    }
+
+    .header{
+        text-align:center;
+        color:white;
+        padding:30px;
+    }
+
+    .container{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:20px;
+        padding:20px;
+    }
+
+    .card{
+        width:280px;
+        background:white;
+        border-radius:15px;
+        padding:20px;
+        text-align:center;
+        box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .card h2{
+        color:#2E7D32;
+        margin-bottom:10px;
+    }
+
+    .crop{
+        font-size:30px;
+        font-weight:bold;
+        color:#1B5E20;
+    }
+
+    .btn{
+        text-align:center;
+        margin-top:30px;
+    }
+
+    .btn a{
+        text-decoration:none;
+        background:#1B5E20;
+        color:white;
+        padding:12px 25px;
+        border-radius:10px;
+    }
+
+    </style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>🌾 Crop Recommendation System</h1>
+    <h3>Recommended Crops Based on Soil & Weather</h3>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>🌱 Cotton</h2>
+        <p class="crop">Recommended</p>
+        <p>Suitable for warm climate and medium moisture.</p>
+    </div>
+
+    <div class="card">
+        <h2>🌿 Soybean</h2>
+        <p class="crop">Recommended</p>
+        <p>Best for moderate rainfall and fertile soil.</p>
+    </div>
+
+    <div class="card">
+        <h2>🌾 Wheat</h2>
+        <p class="crop">Recommended</p>
+        <p>Suitable for cool weather conditions.</p>
+    </div>
+
+    <div class="card">
+        <h2>🍬 Sugarcane</h2>
+        <p class="crop">Recommended</p>
+        <p>Requires high water availability and sunlight.</p>
+    </div>
+
+</div>
+
+<div class="btn">
+    <a href="/dashboard">⬅️ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

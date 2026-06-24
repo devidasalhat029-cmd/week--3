@@ -1,0 +1,27 @@
+body{
+    font-family: Arial;
+    background-color: #f0fff0;
+    margin: 20px;
+}
+
+h1{
+    color: green;
+}
+
+h2{
+    color: darkgreen;
+}
+
+nav a{
+    margin-right: 15px;
+    text-decoration: none;
+    color: blue;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+}

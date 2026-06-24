@@ -1,0 +1,79 @@
+{% extends "baseofhtml.html" %}
+
+{% block title %}
+Farmer Information
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="mb-4">
+        👨‍🌾 Farmer Information
+    </h1>
+
+    <div class="card shadow">
+        <div class="card-body">
+
+            <table class="table table-bordered table-hover">
+
+                <tr class="table-success">
+                    <th>📋 Details</th>
+                    <th>📊 Information</th>
+                </tr>
+
+                <tr>
+                    <td>👤 Name</td>
+                    <td>{{ farmer.name }}</td>
+                </tr>
+
+                <tr>
+                    <td>🎂 Age</td>
+                    <td>{{ farmer.age }}</td>
+                </tr>
+
+                <tr>
+                    <td>📍 Location</td>
+                    <td>{{ farmer.location }}</td>
+                </tr>
+
+                <tr>
+                    <td>🌾 Crop</td>
+                    <td>{{ farmer.crop }}</td>
+                </tr>
+
+                <tr>
+                    <td>📈 Crop Yield</td>
+                    <td>{{ farmer.crop_yield }} kg</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+    <div class="card mt-4 shadow">
+        <div class="card-body">
+
+            <h3>🌱 Farming Status</h3>
+
+            <p>
+                🚜 Farmer is actively monitoring crops using the
+                Automated Agriculture Monitoring System.
+            </p>
+
+            <p>
+                🌦️ Weather updates, crop information and yield tracking
+                help improve farming decisions.
+            </p>
+
+            <p>
+                🌾 Smart Farming = Better Production + Better Profit 💰
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

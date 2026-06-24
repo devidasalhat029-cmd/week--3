@@ -1,0 +1,75 @@
+{% extends "baseofhtml.html" %}
+
+{% block title %}
+Farmer Information
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5 text-center">
+
+    <h1 class="display-4">
+        👨‍🌾 Farmer Information
+    </h1>
+
+    <p class="lead">
+        Smart farming details and crop monitoring information.
+    </p>
+
+    <div class="row mt-5">
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3>
+                        👤 Farmer Details
+                        <span class="badge bg-success">New</span>
+                    </h3>
+
+                    <p><b>Name:</b> {{ farmer.name }}</p>
+                    <p><b>Age:</b> {{ farmer.age }}</p>
+                    <p><b>Location:</b> {{ farmer.location }}</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3>
+                        🌾 Crop Details
+                        <span class="badge bg-info">Live</span>
+                    </h3>
+
+                    <p><b>Crop:</b> {{ farmer.crop }}</p>
+                    <p><b>Yield:</b> {{ farmer.crop_yield }} kg</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-body">
+
+                    <h3>
+                        🚜 Farming Status
+                        <span class="badge bg-warning text-dark">Active</span>
+                    </h3>
+
+                    <p>
+                        Farmer is actively monitoring crops using smart farming technology.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

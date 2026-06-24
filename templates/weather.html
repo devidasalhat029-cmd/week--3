@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Segoe UI;
+        }
+
+        body{
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+            min-height:100vh;
+        }
+
+        .header{
+            text-align:center;
+            color:white;
+            padding:30px;
+        }
+
+        .container{
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap;
+            margin-top:30px;
+        }
+
+        .card{
+            width:220px;
+            background:white;
+            border-radius:15px;
+            padding:20px;
+            text-align:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .temp{
+            font-size:35px;
+            font-weight:bold;
+            color:#2196F3;
+        }
+
+        .day{
+            font-size:22px;
+            margin-bottom:10px;
+        }
+
+        .btn{
+            text-align:center;
+            margin-top:40px;
+        }
+
+        .btn a{
+            text-decoration:none;
+            background:#1565C0;
+            color:white;
+            padding:12px 25px;
+            border-radius:10px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>🌦️ Weather Forecast</h1>
+    <h3>Smart Agriculture Weather Monitoring</h3>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <div class="day">Monday</div>
+        <h1>☀️</h1>
+        <div class="temp">32°C</div>
+        <p>Sunny</p>
+    </div>
+
+    <div class="card">
+        <div class="day">Tuesday</div>
+        <h1>⛅</h1>
+        <div class="temp">29°C</div>
+        <p>Cloudy</p>
+    </div>
+
+    <div class="card">
+        <div class="day">Wednesday</div>
+        <h1>🌧️</h1>
+        <div class="temp">25°C</div>
+        <p>Rainy</p>
+    </div>
+
+    <div class="card">
+        <div class="day">Thursday</div>
+        <h1>🌩️</h1>
+        <div class="temp">27°C</div>
+        <p>Thunderstorm</p>
+    </div>
+
+</div>
+
+<div class="btn">
+    <a href="/dashboard">⬅️ Back to Dashboard</a>
+</div>
+
+</body>
+</html>
