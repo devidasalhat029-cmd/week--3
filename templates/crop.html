@@ -1,110 +1,123 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Crop Recommendation</title>
+{% extends "baseofhtml.html" %}
 
-    <style>
+{% block title %}
+Crop Recommendation
+{% endblock %}
 
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:'Segoe UI',sans-serif;
-    }
+{% block content %}
 
-    body{
-        background:linear-gradient(135deg,#56ab2f,#a8e063);
-        min-height:100vh;
-    }
+<div class="container mt-4">
 
-    .header{
-        text-align:center;
-        color:white;
-        padding:30px;
-    }
+    <h1 class="mb-4">
+        🌾 Crop Recommendation System
+    </h1>
 
-    .container{
-        display:flex;
-        justify-content:center;
-        flex-wrap:wrap;
-        gap:20px;
-        padding:20px;
-    }
+    <div class="card shadow">
+        <div class="card-body">
 
-    .card{
-        width:280px;
-        background:white;
-        border-radius:15px;
-        padding:20px;
-        text-align:center;
-        box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    }
+            <table class="table table-bordered table-hover">
 
-    .card h2{
-        color:#2E7D32;
-        margin-bottom:10px;
-    }
+                <tr class="table-success">
+                    <th>🌱 Crop Name</th>
+                    <th>📊 Recommendation Status</th>
+                    <th>📝 Description</th>
+                </tr>
 
-    .crop{
-        font-size:30px;
-        font-weight:bold;
-        color:#1B5E20;
-    }
+                <tr>
+                    <td>🌱 Cotton</td>
+                    <td>✅ Recommended</td>
+                    <td>Suitable for warm climate and medium soil moisture.</td>
+                </tr>
 
-    .btn{
-        text-align:center;
-        margin-top:30px;
-    }
+                <tr>
+                    <td>🌿 Soybean</td>
+                    <td>✅ Recommended</td>
+                    <td>Best for moderate rainfall and fertile soil.</td>
+                </tr>
 
-    .btn a{
-        text-decoration:none;
-        background:#1B5E20;
-        color:white;
-        padding:12px 25px;
-        border-radius:10px;
-    }
+                <tr>
+                    <td>🌾 Wheat</td>
+                    <td>✅ Recommended</td>
+                    <td>Suitable for cool weather conditions.</td>
+                </tr>
 
-    </style>
+                <tr>
+                    <td>🍬 Sugarcane</td>
+                    <td>✅ Recommended</td>
+                    <td>Requires high water availability and sufficient sunlight.</td>
+                </tr>
 
-</head>
-<body>
+                <tr>
+                    <td>🌽 Maize</td>
+                    <td>✅ Recommended</td>
+                    <td>Grows well in moderate temperature and rainfall.</td>
+                </tr>
 
-<div class="header">
-    <h1>🌾 Crop Recommendation System</h1>
-    <h3>Recommended Crops Based on Soil & Weather</h3>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="card mt-4 shadow">
+        <div class="card-body">
+
+            <h3>🌱 Soil & Weather Information</h3>
+
+            <table class="table table-bordered table-hover">
+
+                <tr class="table-warning">
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+
+                <tr>
+                    <td>🌡️ Temperature</td>
+                    <td>28°C</td>
+                </tr>
+
+                <tr>
+                    <td>💧 Soil Moisture</td>
+                    <td>72%</td>
+                </tr>
+
+                <tr>
+                    <td>☔ Rainfall</td>
+                    <td>120 mm</td>
+                </tr>
+
+                <tr>
+                    <td>🧪 Soil Type</td>
+                    <td>Black Soil</td>
+                </tr>
+
+                <tr>
+                    <td>⚗️ Soil pH</td>
+                    <td>6.8</td>
+                </tr>
+
+            </table>
+
+        </div>
+    </div>
+
+    <div class="card mt-4 shadow">
+        <div class="card-body">
+
+            <h3>🚜 Farming Recommendation</h3>
+
+            <p>🌱 Based on soil and weather conditions, Cotton and Soybean are highly recommended.</p>
+
+            <p>💧 Maintain proper irrigation for better crop growth.</p>
+
+            <p>🌦️ Monitor weather conditions regularly before sowing.</p>
+
+            <p>📈 Smart crop selection improves productivity and profit.</p>
+
+            <p>🌾 Smart Farming = Better Production + Better Profit 💰</p>
+
+        </div>
+    </div>
+
 </div>
 
-<div class="container">
-
-    <div class="card">
-        <h2>🌱 Cotton</h2>
-        <p class="crop">Recommended</p>
-        <p>Suitable for warm climate and medium moisture.</p>
-    </div>
-
-    <div class="card">
-        <h2>🌿 Soybean</h2>
-        <p class="crop">Recommended</p>
-        <p>Best for moderate rainfall and fertile soil.</p>
-    </div>
-
-    <div class="card">
-        <h2>🌾 Wheat</h2>
-        <p class="crop">Recommended</p>
-        <p>Suitable for cool weather conditions.</p>
-    </div>
-
-    <div class="card">
-        <h2>🍬 Sugarcane</h2>
-        <p class="crop">Recommended</p>
-        <p>Requires high water availability and sunlight.</p>
-    </div>
-
-</div>
-
-<div class="btn">
-    <a href="/dashboard">⬅️ Back to Dashboard</a>
-</div>
-
-</body>
-</html>
+{% endblock %}

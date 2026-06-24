@@ -1,71 +1,69 @@
 {% extends "baseofhtml.html" %}
 
 {% block title %}
-Farmer Information
+Home
 {% endblock %}
 
 {% block content %}
 
-<div class="container mt-5 text-center">
+<div class="container mt-5">
 
-    <h1 class="display-4">
-        👨‍🌾 Farmer Information
-    </h1>
+    <div class="text-center">
+        <h1>🌾 Automatic Agriculture Monitoring System</h1>
 
-    <p class="lead">
-        Smart farming details and crop monitoring information.
-    </p>
+        <p class="lead">
+            Smart Farming Dashboard
+        </p>
+    </div>
 
-    <div class="row mt-5">
+    <div class="card shadow mt-4">
+        <div class="card-body">
 
-        <div class="col-md-4">
-            <div class="card shadow">
-                <div class="card-body">
+            <h3>👨‍🌾 Farmer Overview</h3>
 
-                    <h3>
-                        👤 Farmer Details
-                        <span class="badge bg-success">New</span>
-                    </h3>
+            <p><b>Name:</b> {{ farmer.name }}</p>
 
-                    <p><b>Name:</b> {{ farmer.name }}</p>
-                    <p><b>Age:</b> {{ farmer.age }}</p>
-                    <p><b>Location:</b> {{ farmer.location }}</p>
+            <p><b>Age:</b> {{ farmer.age }}</p>
 
-                </div>
-            </div>
+            <p><b>Location:</b> {{ farmer.location }}</p>
+
+            <p><b>Crop:</b> {{ farmer.crop }}</p>
+
+            <p><b>Crop Yield:</b> {{ farmer.crop_yield }} Kg</p>
+
+        </div>
+    </div>
+
+    <div class="row mt-4">
+
+        <div class="col-md-3 mb-3">
+            <a href="/farmer" class="btn btn-success w-100">
+                👨‍🌾 Farmer Info
+            </a>
         </div>
 
-        <div class="col-md-4">
-            <div class="card shadow">
-                <div class="card-body">
-
-                    <h3>
-                        🌾 Crop Details
-                        <span class="badge bg-info">Live</span>
-                    </h3>
-
-                    <p><b>Crop:</b> {{ farmer.crop }}</p>
-                    <p><b>Yield:</b> {{ farmer.crop_yield }} kg</p>
-
-                </div>
-            </div>
+        <div class="col-md-3 mb-3">
+            <a href="/weather" class="btn btn-primary w-100">
+                🌦️ Weather
+            </a>
         </div>
 
-        <div class="col-md-4">
-            <div class="card shadow">
-                <div class="card-body">
+        <div class="col-md-3 mb-3">
+            <a href="/motor" class="btn btn-danger w-100">
+                🚰 Motor Control
+            </a>
+        </div>
 
-                    <h3>
-                        🚜 Farming Status
-                        <span class="badge bg-warning text-dark">Active</span>
-                    </h3>
-
-                    <p>
-                        Farmer is actively monitoring crops using smart farming technology.
-                    </p>
-
-                </div>
-            </div>
+        <div class="col-md-3 mb-3">
+            <a href="/crop" class="btn btn-warning w-100">
+                🌱 Crop Recommendation
+            </a>
+        </div>
+         <div class="col-md-3 mb-3">
+            <a href="/records" class="btn btn-warning w-100">
+                Records
+                
+            </a>
         </div>
 
     </div>

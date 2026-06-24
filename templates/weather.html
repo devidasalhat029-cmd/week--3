@@ -1,112 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Weather Forecast</title>
+{% extends "baseofhtml.html" %}
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Segoe UI;
-        }
+{% block title %}
+Weather Forecast
+{% endblock %}
 
-        body{
-            background:linear-gradient(135deg,#4facfe,#00f2fe);
-            min-height:100vh;
-        }
+{% block content %}
 
-        .header{
-            text-align:center;
-            color:white;
-            padding:30px;
-        }
+<div class="container mt-4">
 
-        .container{
-            display:flex;
-            justify-content:center;
-            gap:25px;
-            flex-wrap:wrap;
-            margin-top:30px;
-        }
+    <h1 class="text-center mb-4">
+        🌦️ Weather Forecast
+    </h1>
 
-        .card{
-            width:220px;
-            background:white;
-            border-radius:15px;
-            padding:20px;
-            text-align:center;
-            box-shadow:0 5px 15px rgba(0,0,0,0.2);
-        }
+    <div class="card shadow">
+        <div class="card-body">
 
-        .temp{
-            font-size:35px;
-            font-weight:bold;
-            color:#2196F3;
-        }
+            <h3 class="mb-3">
+                📅 Weekly Weather Report
+            </h3>
 
-        .day{
-            font-size:22px;
-            margin-bottom:10px;
-        }
+            <table class="table table-bordered table-hover">
 
-        .btn{
-            text-align:center;
-            margin-top:40px;
-        }
+                <tr class="table-primary">
+                    <th>📆 Day</th>
+                    <th>🌤️ Weather</th>
+                    <th>🌡️ Temperature</th>
+                    <th>📋 Condition</th>
+                </tr>
 
-        .btn a{
-            text-decoration:none;
-            background:#1565C0;
-            color:white;
-            padding:12px 25px;
-            border-radius:10px;
-        }
-    </style>
+                <tr>
+                    <td>Monday</td>
+                    <td>☀️</td>
+                    <td>32°C</td>
+                    <td>Sunny</td>
+                </tr>
 
-</head>
-<body>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>⛅</td>
+                    <td>29°C</td>
+                    <td>Cloudy</td>
+                </tr>
 
-<div class="header">
-    <h1>🌦️ Weather Forecast</h1>
-    <h3>Smart Agriculture Weather Monitoring</h3>
-</div>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>🌧️</td>
+                    <td>25°C</td>
+                    <td>Rainy</td>
+                </tr>
 
-<div class="container">
+                <tr>
+                    <td>Thursday</td>
+                    <td>🌩️</td>
+                    <td>27°C</td>
+                    <td>Thunderstorm</td>
+                </tr>
 
-    <div class="card">
-        <div class="day">Monday</div>
-        <h1>☀️</h1>
-        <div class="temp">32°C</div>
-        <p>Sunny</p>
+                <tr>
+                    <td>Friday</td>
+                    <td>☁️</td>
+                    <td>28°C</td>
+                    <td>Partly Cloudy</td>
+                </tr>
+
+            </table>
+
+        </div>
     </div>
 
-    <div class="card">
-        <div class="day">Tuesday</div>
-        <h1>⛅</h1>
-        <div class="temp">29°C</div>
-        <p>Cloudy</p>
-    </div>
+    <div class="card mt-4 shadow">
+        <div class="card-body">
 
-    <div class="card">
-        <div class="day">Wednesday</div>
-        <h1>🌧️</h1>
-        <div class="temp">25°C</div>
-        <p>Rainy</p>
-    </div>
+            <h3>🌾 Farming Recommendation</h3>
 
-    <div class="card">
-        <div class="day">Thursday</div>
-        <h1>🌩️</h1>
-        <div class="temp">27°C</div>
-        <p>Thunderstorm</p>
+            <p>
+                ☀️ Sunny weather is suitable for harvesting crops.
+            </p>
+
+            <p>
+                🌧️ Rain expected on Wednesday, avoid irrigation.
+            </p>
+
+            <p>
+                🌱 Monitor soil moisture regularly for better crop growth.
+            </p>
+
+            <p>
+                🚜 Use weather forecasts to plan farming activities effectively.
+            </p>
+
+        </div>
     </div>
 
 </div>
 
-<div class="btn">
-    <a href="/dashboard">⬅️ Back to Dashboard</a>
-</div>
-
-</body>
-</html>
+{% endblock %}

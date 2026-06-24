@@ -1,115 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farmer Login</title>
+{% extends "baseofhtml.html" %}
 
-<style>
+{% block title %}
+Farmer Login
+{% endblock %}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
+{% block content %}
 
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#11998e,#38ef7d);
-}
+<div class="container">
 
-.login-box{
-    width:400px;
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    text-align:center;
-}
+    <div class="row justify-content-center mt-5">
 
-.logo{
-    font-size:60px;
-    margin-bottom:10px;
-}
+        <div class="col-md-5">
 
-h1{
-    color:#2E7D32;
-    margin-bottom:10px;
-}
+            <div class="card shadow-lg border-0">
 
-.subtitle{
-    color:gray;
-    margin-bottom:25px;
-}
+                <div class="card-body p-5">
 
-input{
-    width:100%;
-    padding:14px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:10px;
-    font-size:16px;
-}
+                    <div class="text-center mb-4">
 
-input:focus{
-    outline:none;
-    border-color:#2E7D32;
-}
+                        <h1 class="display-4">🌾</h1>
 
-button{
-    width:100%;
-    padding:14px;
-    margin-top:15px;
-    border:none;
-    border-radius:10px;
-    background:#2E7D32;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-}
+                        <h2 class="text-success">
+                            Farmer Login
+                        </h2>
 
-button:hover{
-    background:#1B5E20;
-}
+                        <p class="text-muted">
+                            Automatic Agriculture Monitoring System
+                        </p>
 
-.footer{
-    margin-top:20px;
-    color:gray;
-    font-size:14px;
-}
+                    </div>
 
-</style>
-</head>
+                    <form method="POST">
 
-<body>
+                        <div class="mb-3">
 
-<div class="login-box">
+                            <label class="form-label">
+                                👤 Username
+                            </label>
 
-    <div class="logo">🌾</div>
+                            <input
+                                type="text"
+                                name="username"
+                                class="form-control"
+                                placeholder="Enter Username"
+                                required>
 
-    <h1>Farmer Login</h1>
+                        </div>
 
-    <p class="subtitle">
-        Automatic Agriculture Monitoring System
-    </p>
+                        <div class="mb-3">
 
-    <form>
-        <input type="text" placeholder="Enter Username" required>
+                            <label class="form-label">
+                                🔒 Password
+                            </label>
 
-        <input type="password" placeholder="Enter Password" required>
+                            <input
+                                type="password"
+                                name="password"
+                                class="form-control"
+                                placeholder="Enter Password"
+                                required>
 
-        <button type="submit">Login</button>
-    </form>
+                        </div>
 
-    <div class="footer">
-        Smart Farming Dashboard © 2026
+                        <div class="d-grid">
+
+                            <button
+                                type="submit"
+                                class="btn btn-success btn-lg">
+
+                                🚀 Login
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <hr>
+
+                    <div class="text-center">
+
+                        <small class="text-muted">
+                            🌾 Smart Farming Dashboard © 2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>
 
-</body>
-</html>
+{% endblock %}

@@ -18,7 +18,7 @@ records_data = [
 
 @app.route("/")
 def home():
-    return render_template("home.html",farmer=farmer_information)
+    return render_template("home.html",farmer=farmer)
 
 @app.route("/records")
 def records():
@@ -28,6 +28,23 @@ def records():
 @app.route("/farmer")
 def farmer_information():
     return render_template("farmer.html", farmer=farmer)
+@app.route("/motor")
+def motor():
+    return render_template("motor.html")
+
+@app.route("/weather")
+def weather():
+    return render_template("weather.html")
+
+@app.route("/analytics")
+def analytics():
+    return render_template("analytics.html")
+@app.route("/crop")
+def crop():
+    return render_template("crop.html")
+@app.route("/login",methods=["GET","POST"])
+def login():
+    return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
