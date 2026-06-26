@@ -116,8 +116,8 @@ def motor():
     return render_template('motor.html')
 
 # Records
-@app.route('/record')
-def record():
+@app.route('/records')
+def records():
 
     if 'user' not in session:
         return redirect('/login')
@@ -125,13 +125,13 @@ def record():
     return render_template('records.html')
 
 # Analytics
-@app.route('/analysis')
-def analysis():
+@app.route('/analytics')
+def analytics():
 
     if 'user' not in session:
         return redirect('/login')
 
-    return render_template('analysis.html')
+    return render_template('analytics.html')
 
 # Logout
 @app.route('/logout')

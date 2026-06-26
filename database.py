@@ -1,35 +1,21 @@
 import sqlite3
-from flask import Flask,render_template,request,flash
 
-app=Flask(__name__)
-app.secret_key="Linkkiwi2026"
+conn = sqlite3.connect("agriculture.db")
 
-def get_db():
-   """database connection"""
+cursor = conn.cursor()
 
-   conn =sqlite3.connect('my_project.db')
-   cursor=conn.cursor()
-   conn.row_factory=sqlite3.Row 
-   return conn
-def init_db():
-#creating a table using database
-   conn=get_db()
-   cursor=conn.cursor()
-   conn.execute
-   ('''
-        CREATE TABLE IF NOT EXISTS farmers
-            (
-                farmer_id INTEGER  PRAMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL,
-                mobile TEXT,
-                village TEXT,
-                email TEXT
-            ) ''' 
-   )
-   conn.Commit()
-   conn.Close()    
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS farmers(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    mobile TEXT NOT NULL,
+    village TEXT NOT NULL,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+)
+""")
 
-   if __name__== "__main__":
-      init_db()    #initlise the database
-      app.run(deug=True)
- 
+conn.commit()
+conn.close()
+
+print("Database Created Successfully")
