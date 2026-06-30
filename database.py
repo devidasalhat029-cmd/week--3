@@ -29,4 +29,6 @@ CREATE TABLE IF NOT EXISTS crop_management(
 conn.commit()
 conn.close()
 
+
+
 print("Database Created Successfully")
