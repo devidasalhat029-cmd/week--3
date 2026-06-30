@@ -88,37 +88,27 @@ def farmer():
     }
 
     return render_template('farmer.html', farmer=farmer)
-
-@app.route("/serch")
+@app.route('/search', methods=['GET','POST'])
 def search():
 
-    q = request.args.get("q", "")
+    records = []
 
-    results = []
+    if request.method == "POST":
 
-    if q:
+        search = request.form['search']
 
         conn = connect()
-        cursor = conn.cursor()
 
-        cursor.execute("""
-            SELECT crop_name
-            FROM crops
-            WHERE crop_name LIKE ?
-        """, ('%' + q + '%',))
-
-        data = cursor.fetchall()
-
-        for row in data:
-            results.append(row["crop_name"])
+        records = conn.execute("""
+        SELECT * FROM crop_management
+        WHERE crop_name LIKE ?
+        OR farmer_name LIKE ?
+        """,('%'+search+'%','%'+search+'%')).fetchall()
 
         conn.close()
 
-    return render_template(
-        "serch_page.html",
-        results=results,
-        q=q
-    )
+    return render_template("serch_page.html",
+                           records=records)
 
 # Crop Management (Read)
 @app.route('/crop')

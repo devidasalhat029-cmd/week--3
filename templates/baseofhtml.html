@@ -25,6 +25,9 @@ background:#f4f7fa;
 .navbar{
 background:#198754;
 padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
@@ -38,6 +41,7 @@ text-decoration:none;
 display:flex;
 gap:15px;
 flex-wrap:wrap;
+align-items:center;
 }
 
 .nav-links a{
@@ -49,6 +53,38 @@ transition:.3s;
 }
 
 .nav-links a:hover{
+background:white;
+color:#198754;
+}
+
+.search-form{
+display:flex;
+align-items:center;
+gap:10px;
+margin-left:20px;
+}
+
+.search-input{
+width:180px;
+height:42px;
+border:none;
+border-radius:8px;
+padding:0 12px;
+outline:none;
+}
+
+.search-btn{
+height:42px;
+padding:0 18px;
+border:2px solid white;
+background:#198754;
+color:white;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.search-btn:hover{
 background:white;
 color:#198754;
 }
@@ -71,7 +107,7 @@ margin-top:30px;
 
 <body>
 
-<nav class="navbar d-flex justify-content-between">
+<nav class="navbar">
 
 <a href="/" class="logo">
 🌾 Agro Monitor
@@ -95,20 +131,13 @@ margin-top:30px;
 <i class="fas fa-cloud-sun"></i> Weather
 </a>
 
-<li class="nav-item">
-    <a class="nav-link" href="/serch">🔍 Search</a>
-</li>
-
 <a href="/crop">
 <i class="fas fa-seedling"></i> Crop
 </a>
 
-
-
 <a href="/irrigation">
-<i class="fas fa-seedling"></i> Irrigation
+<i class="fas fa-droplet"></i> Irrigation
 </a>
-
 
 <a href="/motor">
 <i class="fas fa-faucet"></i> Motor
@@ -128,6 +157,21 @@ margin-top:30px;
 
 </div>
 
+<form class="search-form" action="/search" method="POST">
+
+<input
+type="text"
+name="search"
+class="search-input"
+placeholder="Search"
+required>
+
+<button type="submit" class="search-btn">
+Search
+</button>
+
+</form>
+
 </nav>
 
 <div class="main-content">
@@ -142,4 +186,4 @@ Automatic Agriculture Monitoring System © 2026
 </div>
 
 </body>
-</html>dd
+</html>

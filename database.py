@@ -15,12 +15,14 @@ CREATE TABLE IF NOT EXISTS farmers(
 )
 """)
 
-# Crop Table
+# Crop Management Table
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS crop(
+CREATE TABLE IF NOT EXISTS crop_management(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     crop_name TEXT,
-    season TEXT
+    farmer_name TEXT,
+    village TEXT,
+    date TEXT
 )
 """)
 
@@ -28,4 +30,3 @@ conn.commit()
 conn.close()
 
 print("Database Created Successfully")
-
