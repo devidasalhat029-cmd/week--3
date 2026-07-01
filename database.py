@@ -3,7 +3,6 @@ import sqlite3
 conn = sqlite3.connect("agriculture.db")
 cursor = conn.cursor()
 
-# Farmers Table
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS farmers(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -15,20 +14,15 @@ CREATE TABLE IF NOT EXISTS farmers(
 )
 """)
 
-# Crop Management Table
 cursor.execute("""
-CREATE TABLE IF NOT EXISTS crop_management(
+CREATE TABLE IF NOT EXISTS crop(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     crop_name TEXT,
-    farmer_name TEXT,
-    village TEXT,
-    date TEXT
+    season TEXT
 )
 """)
 
 conn.commit()
 conn.close()
-
-
 
 print("Database Created Successfully")

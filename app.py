@@ -90,22 +90,26 @@ def farmer():
     return render_template('farmer.html', farmer=farmer)
  # Replace only the search route in your existing app.py
 
-@app.route('/search', methods=['GET','POST'])
+@app.route('/search', methods=['GET', 'POST'])
 def search():
-    records=[]
-    if request.method=="POST":
-        search=request.form.get('search','')
-        village=request.form.get('village','')
-        conn=connect()
-        query="""SELECT * FROM crop_management
-        WHERE (crop_name LIKE ? OR farmer_name LIKE ?)"""
-        values=[f'%{search}%',f'%{search}%']
-        if village:
-            query += " AND village=?"
-            values.append(village)
-        records=conn.execute(query,values).fetchall()
+
+    records = []
+
+    if request.method == "POST":
+
+        search = request.form['search']
+
+        conn = connect()
+
+        records = conn.execute("""
+        SELECT * FROM crop
+        WHERE crop_name LIKE ?
+        OR season LIKE ?
+        """, ('%' + search + '%', '%' + search + '%')).fetchall()
+
         conn.close()
-    return render_template("serch_page.html",records=records)
+
+    return render_template("serch_page.html", records=records)
 
 
 # Crop Management (Read)

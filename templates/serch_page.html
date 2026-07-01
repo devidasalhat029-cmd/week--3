@@ -1,21 +1,81 @@
 {% extends 'baseofhtml.html' %}
+
+{% block title %}
+Search
+{% endblock %}
+
 {% block content %}
+
 <div class="container mt-5">
-<form method="POST" action="/search" class="row g-2">
-<div class="col-md-5"><input class="form-control" name="search" placeholder="Search crop/farmer"></div>
-<div class="col-md-4">
-<select class="form-select" name="village">
-<option value="">All Villages</option>
-<option>Nagpur</option><option>Pune</option><option>Nashik</option><option>Aurangabad</option>
-</select></div>
-<div class="col-md-3"><button class="btn btn-success w-100">Search</button></div>
-</form>
+
+<div class="card shadow-lg border-0">
+
+<div class="card-header bg-success text-white text-center">
+
+<h2>
+<i class="fas fa-search"></i> Search Result
+</h2>
+
+</div>
+
+<div class="card-body">
+
 {% if records %}
-<table class="table table-bordered mt-4">
-<tr><th>ID</th><th>Crop</th><th>Farmer</th><th>Village</th><th>Date</th></tr>
+
+<table class="table table-bordered table-hover text-center">
+
+<thead class="table-success">
+
+<tr>
+
+<th><i class="fas fa-hashtag"></i> ID</th>
+<th><i class="fas fa-seedling"></i> Crop Name</th>
+<th><i class="fas fa-leaf"></i> Season</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
 {% for row in records %}
-<tr><td>{{row['id']}}</td><td>{{row['crop_name']}}</td><td>{{row['farmer_name']}}</td><td>{{row['village']}}</td><td>{{row['date']}}</td></tr>
+
+<tr>
+
+<td>{{ row['id'] }}</td>
+<td>{{ row['crop_name'] }}</td>
+<td>{{ row['season'] }}</td>
+
+</tr>
+
 {% endfor %}
+
+</tbody>
+
 </table>
-{% else %}<h4 class="text-danger mt-4">No Record Found</h4>{% endif %}
-</div>{% endblock %}
+
+{% else %}
+
+<div class="text-center mt-5">
+
+<i class="fas fa-circle-exclamation fa-4x text-danger"></i>
+
+<h3 class="mt-3 text-danger">
+No Record Found
+</h3>
+
+<p class="text-muted">
+Please search another Crop Name or Season.
+</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
